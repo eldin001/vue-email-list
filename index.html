@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Vue email list</title>
 </head>
 <body>
     <div id="app">
         <h2>Email List</h2>
-        <button @click="generateEmails">Genera Email</button>
+        <button @click="generateEmails" >Genera Email</button>
         <ul>
             <li v-for="email in emails" :key="email">{{ email }}</li>
         </ul>

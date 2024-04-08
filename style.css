@@ -1,0 +1,7 @@
+.email-list {
+    display: none; 
+}
+
+.email-list.visibile { 
+    display: block;
+}

@@ -19,12 +19,12 @@ createApp({
                     .then((response) => {
                         this.emails.push(response.data.response);
                     });
+                    this.emails = [];
             }
+
         },
-    },
-    created() {
-        this.generateEmails();
-    },
+    }
+
 }).mount('#app');
 
 
