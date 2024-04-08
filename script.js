@@ -5,23 +5,26 @@ generare 10 indirizzi email e stamparli in pagina all'interno di una lista. */
 
 const { createApp } = Vue;
 
+
 createApp({
-    data () {
-        return{
-            email: '',
-        }
+    data() {
+        return {
+            emails: [],
+        };
     },
     methods: {
-        generateEmail(){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response)=>{
-                console.log(response.data.response);
-                this.email = response.data.response;
-            })
-        }
+        generateEmails() {
+            for (let i = 0; i < 10; i++) {
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                    .then((response) => {
+                        this.emails.push(response.data.response);
+                    });
+            }
+        },
     },
-    created(){
-        this.generateEmail();
-    }
+    created() {
+        this.generateEmails();
+    },
+}).mount('#app');
 
-}).mount('#app')
 

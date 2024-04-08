@@ -10,7 +10,11 @@
 </head>
 <body>
     <div id="app">
-        {{email}}
+        <h2>Email List</h2>
+        <button @click="generateEmails">Genera Email</button>
+        <ul>
+            <li v-for="email in emails" :key="email">{{ email }}</li>
+        </ul>
     </div>
 </body>
 </html>
